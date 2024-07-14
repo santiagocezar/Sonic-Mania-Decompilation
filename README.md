@@ -1,3 +1,20 @@
+Sonic Mania, now on PS2^\*
+
+^\*: on pcsx2, with the dev console mode enabled, only the menu and it walks instead of running. sorry!
+
+You might want to use Docker or Podman to build this, with the [PS2DEV](https://hub.docker.com/r/ps2dev/ps2dev) image.
+```sh
+podman run --rm -v $PWD:/src:z -it docker.io/ps2dev/ps2dev sh # download and run the image
+# inside the container
+apk add cmake build-base pkgconfig
+cd /src
+./ps2-build.sh
+```
+
+In PCSX2, check "Enable Host Filesystem", enable Advanced Settigns and check "Enable 128MB RAM (Dev Console)".
+
+ELF is at `dependencies/RSDKv5/RSDKv5U`, rename to `RSDKv5U.elf`, place your Data.rsdk besides.
+
 # **SUPPORT THE OFFICIAL RELEASE OF SONIC MANIA (PLUS)**
 + Without assets from the official releases, this decompilation will not run.
 
